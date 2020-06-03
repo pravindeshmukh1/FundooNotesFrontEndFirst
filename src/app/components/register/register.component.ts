@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { UserService } from 'src/app/services/user.service';
+import { UserService } from 'src/app/services/user.service/user.service';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +11,7 @@ export class RegisterComponent implements OnInit {
   formData: FormGroup;
   hide = true;
 
-  constructor() {}
+  constructor(private userService: UserService) {}
 
   FirstName = new FormControl('', [
     Validators.pattern('[a-zA-Z ]*'),
@@ -52,7 +52,20 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.FirstName.value);
+    const userData = {
+      firstName: this.FirstName,
+      lastName: this.LastName,
+      email: this.Email,
+      password: this.Password,
+    };
+    this.userService.register(userData).subscribe(
+      (resp) => {
+        console.log(resp);
+      },
+      (err) => {
+        console.log(JSON.stringify(err));
+      }
+    );
   }
   ngOnInit(): void {}
 }

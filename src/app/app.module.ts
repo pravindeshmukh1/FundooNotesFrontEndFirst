@@ -11,7 +11,7 @@ import { MaterialModule } from './material.module';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PwdForgotComponent } from './components/pwd-forgot/pwd-forgot.component';
-import { UserService } from './services/user.service';
+import { UserService } from './services/user.service/user.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
