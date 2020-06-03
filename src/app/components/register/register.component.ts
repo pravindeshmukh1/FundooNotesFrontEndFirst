@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service/user.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,10 @@ export class RegisterComponent implements OnInit {
   formData: FormGroup;
   hide = true;
 
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private snackBar: MatSnackBar
+  ) {}
 
   FirstName = new FormControl('', [
     Validators.pattern('[a-zA-Z ]*'),
@@ -52,18 +56,23 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    const userData = {
-      firstName: this.FirstName,
-      lastName: this.LastName,
-      email: this.Email,
-      password: this.Password,
+    let userData = {
+      firstName: this.FirstName.value,
+      lastName: this.LastName.value,
+      email: this.Email.value,
+      password: this.Password.value,
+      service: 'Basic',
     };
     this.userService.register(userData).subscribe(
       (resp) => {
-        console.log(resp);
+        this.snackBar.open('User Register Sucessfully', '', {
+          duration: 2000,
+        });
       },
       (err) => {
-        console.log(JSON.stringify(err));
+        this.snackBar.open('something went wrong', '', {
+          duration: 4000,
+        });
       }
     );
   }

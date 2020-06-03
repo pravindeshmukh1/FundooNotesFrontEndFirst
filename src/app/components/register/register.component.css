@@ -8,7 +8,9 @@ mat-card {
 }
 
 .divider {
-  margin-top: 10px;
+  margin-top: 2%;
+  margin-left: 25%;
+  margin-right: 20%;
 }
 
 mat-form-field,
