@@ -14,4 +14,17 @@ export class UserService {
   login(user) {
     return this.httpService.post('user/login', user);
   }
+
+  requestForgot(user) {
+    return this.httpService.post('user/reset', user);
+  }
+
+  resetPassword(user,token) {
+    console.log("log",user,token);
+    
+    return this.httpService.post(
+      `user/reset-password?access_token=${token}`,
+      user
+    );
+  }
 }

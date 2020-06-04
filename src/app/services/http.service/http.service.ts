@@ -19,7 +19,7 @@ export class HttpService {
         'Content-Type': 'application/json',
       }),
     };
-    console.log('data', environment.baseUrl + url, user);
+    // console.log('data', environment.baseUrl + url, user);
     return this.http.post(environment.baseUrl + url, user, httpOptions);
   }
 

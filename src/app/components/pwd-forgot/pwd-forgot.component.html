@@ -1,41 +1,7 @@
-<!-- <div class="medium-list">
-  <div class="list-header-title">Forgot Password</div>
-  <div class="list-viewer-wrapper">
-    <form
-      [formGroup]="forgotpwdform"
-      (ngSubmit)="(forgotpwdform.valid)"
-      novalidate
-    >
-      <div class="form-container">
-        <mat-form-field>
-          <input
-            id="email"
-            matInput
-            formControlName="email"
-            [(ngModel)]="user.email"
-            placeholder="Enter your email"
-          />
-        </mat-form-field>
-        <button
-          mat-raised-button
-          color="primary"
-          type="submit"
-          [disabled]="!forgotpwdform.valid"
-          (click)="next()"
-        >
-          Next
-        </button>
-        <button mat-button routerLink="/register" class="divider">
-          SignUp
-        </button>
-      </div>
-    </form>
-  </div>
-</div> -->
-<div fxLayoutAlign="center center" class="main-div">
+<div fxLayoutAlign="center center" fxFlexFill>
   <mat-card class="mat-card" fxFlex="500px">
     <mat-card-header fxLayoutAlign="center">
-      <mat-card-title>FORGOT PASSWORD</mat-card-title>
+      <mat-card-title>Forgot Password</mat-card-title>
     </mat-card-header>
     <div class="form-container">
       <mat-form-field appearance="outline">

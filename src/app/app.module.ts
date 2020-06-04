@@ -5,23 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PwdForgotComponent } from './components/pwd-forgot/pwd-forgot.component';
 import { UserService } from './services/user.service/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { PwdResetComponent } from './components/pwd-reset/pwd-reset.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent,
-    NavBarComponent,
     PwdForgotComponent,
+    PwdResetComponent,
   ],
   imports: [
     BrowserModule,
