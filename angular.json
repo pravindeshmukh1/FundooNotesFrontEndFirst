@@ -123,5 +123,10 @@
       }
     }
   },
-  "defaultProject": "FundooNotesFrontEnd"
+  "defaultProject": "FundooNotesFrontEnd",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

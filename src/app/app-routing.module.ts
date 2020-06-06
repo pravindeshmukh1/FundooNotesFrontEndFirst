@@ -6,6 +6,7 @@ import { RegisterComponent } from './components/register/register.component';
 
 import { PwdForgotComponent } from './components/pwd-forgot/pwd-forgot.component';
 import { PwdResetComponent } from './components/pwd-reset/pwd-reset.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'resetpassword/:token',
     component: PwdResetComponent,
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
   },
 ];
 

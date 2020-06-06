@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormControl } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private route: Router
   ) {}
 
   Email = new FormControl('', [Validators.email, Validators.required]);
@@ -46,6 +48,7 @@ export class LoginComponent implements OnInit {
         this.snackBar.open('User Login Sucessfully', '', {
           duration: 2000,
         });
+        this.route.navigate(['/dashboard']);
       },
       (err) => {
         this.snackBar.open('something went wrong', '', {

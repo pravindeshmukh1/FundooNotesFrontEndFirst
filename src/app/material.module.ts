@@ -7,25 +7,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { TextFieldModule } from '@angular/cdk/text-field';
 
 @NgModule({
-  imports: [
-    // BrowserModule,
-    // BrowserAnimationsModule,
-    // MatToolbarModule,
-    // MatButtonModule,
-    // MatInputModule,
-    // MatIconModule,
-    // MatCardModule,
-    // FlexLayoutModule,
-    // MatFormFieldModule,
-    // ReactiveFormsModule,
-    // FormsModule,
-    // MatSnackBarModule,
-  ],
+  imports: [],
   exports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -37,6 +30,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     FlexLayoutModule,
     MatFormFieldModule,
     MatSnackBarModule,
+    MatMenuModule,
+    MatTooltipModule,
+    MatProgressSpinnerModule,
+    MatSidenavModule,
+    MatListModule,
+    MatExpansionModule,
+    TextFieldModule,
   ],
 })
 export class MaterialModule {}

@@ -12,6 +12,18 @@ import { PwdForgotComponent } from './components/pwd-forgot/pwd-forgot.component
 import { UserService } from './services/user.service/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PwdResetComponent } from './components/pwd-reset/pwd-reset.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ToolbarComponent } from './components/dashboard/toolbar/toolbar.component';
+import { MainNavComponent } from './components/dashboard/main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { CreatenoteComponent } from './components/dashboard/createnote/createnote.component';
+import { SidebarComponent } from './components/dashboard/sidebar/sidebar.component';
+import { SearchboxComponent } from './components/dashboard/searchbox/searchbox.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +32,12 @@ import { PwdResetComponent } from './components/pwd-reset/pwd-reset.component';
     RegisterComponent,
     PwdForgotComponent,
     PwdResetComponent,
+    DashboardComponent,
+    ToolbarComponent,
+    MainNavComponent,
+    CreatenoteComponent,
+    SidebarComponent,
+    SearchboxComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +46,12 @@ import { PwdResetComponent } from './components/pwd-reset/pwd-reset.component';
     MaterialModule,
     ReactiveFormsModule,
     HttpClientModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
   ],
   providers: [UserService],
   bootstrap: [AppComponent],
