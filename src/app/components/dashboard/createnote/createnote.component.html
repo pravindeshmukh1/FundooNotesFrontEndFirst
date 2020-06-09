@@ -1,0 +1,20 @@
+<mat-expansion-panel hideToggle>
+  <mat-expansion-panel-header (click)="togglePanel()">
+    <input autocomplete="off" matInput placeholder="Title" />
+  </mat-expansion-panel-header>
+  <textarea
+    autocomplete="off"
+    matInput
+    fxLayout="column"
+    fxLayoutGap="gappx"
+    placeholder="Take a note..."
+    autocomplete="off"
+    formControlName="description"
+    matTextareaAutosize
+    matAutosizeMinRows="1"
+    matAutosizeMaxRows="25"
+  ></textarea>
+  <button mat-button>
+    Close
+  </button>
+</mat-expansion-panel>

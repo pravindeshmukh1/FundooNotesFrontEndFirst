@@ -1,7 +1,7 @@
 <div fxLayoutAlign="center center" fxFlexFill>
-  <mat-card fxFlex="500px">
-    <mat-card-header fxLayoutAlign="center">
-      <mat-card-title>Registration Form</mat-card-title>
+  <mat-card fxLayout="column" fxFlex="500px" fxFlex.xs="100%">
+    <mat-card-header fxFlex="50px" fxLayoutAlign="center">
+      <mat-card-title>Registration</mat-card-title>
     </mat-card-header>
     <div>
       <mat-form-field appearance="outline">
@@ -56,19 +56,17 @@
           {{ hide ? "visibility" : "visibility_off" }}
         </mat-icon>
       </mat-form-field>
-      <button
-        mat-button
-        type="submit"
-        mat-raised-button
-        color="primary"
-        class="divider"
-        (click)="onSubmit()"
-      >
-        Submit
-      </button>
-      <button mat-button mat-raised-button color="primary" routerLink="/login">
-        Login
-      </button>
+      <div fxLayout="column" fxLayoutAlign="end stretch">
+        <button
+          mat-button
+          type="submit"
+          mat-raised-button
+          color="primary"
+          (click)="onSubmit()"
+        >
+          Submit
+        </button>
+      </div>
     </div>
   </mat-card>
 </div>

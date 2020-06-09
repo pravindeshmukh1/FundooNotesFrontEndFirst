@@ -1,4 +1,4 @@
-<mat-toolbar fxLayoutAlign="space-between center">
+<mat-toolbar fxLayoutAlign="space-start center">
   <button
     mat-icon-button
     matTooltip="Main menu"
@@ -9,10 +9,22 @@
     <mat-icon>menu</mat-icon>
   </button>
 
-  <div fxLayoutAlign="space-between center">
-    <button mat-icon-button matTooltip="refresh" matTooltipPosition="below">
-      <mat-icon>refresh</mat-icon>
-    </button>
+  <div matTooltip="FundooNote" matTooltipPosition="below" fxLayout.xs="column">
+    <img
+      fxLayoutAlign="space-start center"
+      class="titleImage"
+      src="../../../../assets/imeges/FundooNote.png"
+    />
+  </div>
+  <span
+    matTooltip="FundooNote"
+    matTooltipPosition="below"
+    class="fundooTitle"
+    fxFlex.xs="100"
+    >{{ title }}</span
+  >
+
+  <div fxLayout="row" fxLayoutAlign="end center">
     <button mat-icon-button matTooltip="List View" matTooltipPosition="below">
       <mat-icon>view_agenda </mat-icon>
     </button>
@@ -79,7 +91,5 @@
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content class="mat-sidenav-content"
-    >right content</mat-sidenav-content
-  >
+  <mat-sidenav-content><app-createnote></app-createnote></mat-sidenav-content>
 </mat-sidenav-container>

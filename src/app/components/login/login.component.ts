@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
   hide = true;
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
         this.route.navigate(['/dashboard']);
       },
       (err) => {
-        this.snackBar.open('something went wrong', '', {
+        this.snackBar.open('please enter valid email and password', '', {
           duration: 4000,
         });
       }

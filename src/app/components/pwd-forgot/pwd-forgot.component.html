@@ -1,10 +1,14 @@
 <div fxLayoutAlign="center center" fxFlexFill>
-  <mat-card class="mat-card" fxFlex="500px">
-    <mat-card-header fxLayoutAlign="center">
+  <mat-card fxLayout="column" fxFlex="500px" fxFlex.xs="100%">
+    <mat-card-header fxFlex="50px" fxLayoutAlign="center">
       <mat-card-title>Forgot Password</mat-card-title>
     </mat-card-header>
-    <div class="form-container">
-      <mat-form-field appearance="outline">
+    <div>
+      <mat-form-field
+        fxLayout="column"
+        fxLayoutAlign="end stretch"
+        appearance="outline"
+      >
         <mat-label>Email Id</mat-label>
         <input
           matInput
@@ -17,7 +21,7 @@
         }}</mat-error>
       </mat-form-field>
     </div>
-    <div class="buttom-container">
+    <div fxLayout="row" fxLayoutAlign="end end">
       <button
         mat-button
         type="submit"

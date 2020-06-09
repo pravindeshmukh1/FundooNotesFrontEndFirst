@@ -7,24 +7,22 @@ import { HttpService } from '../http.service/http.service';
 export class UserService {
   constructor(private httpService: HttpService) {}
 
-  register(user) {
-    return this.httpService.post('user/userSignUp', user);
+  register(registerData) {
+    return this.httpService.post('register/userSignUp', registerData);
   }
 
-  login(user) {
-    return this.httpService.post('user/login', user);
+  login(loginData) {
+    return this.httpService.post('user/login', loginData);
   }
 
-  requestForgot(user) {
-    return this.httpService.post('user/reset', user);
+  requestForgot(forgotData) {
+    return this.httpService.post('user/reset', forgotData);
   }
 
-  resetPassword(user,token) {
-    console.log("log",user,token);
-    
+  resetPassword(resetData, token) {
     return this.httpService.post(
       `user/reset-password?access_token=${token}`,
-      user
+      resetData
     );
   }
 }

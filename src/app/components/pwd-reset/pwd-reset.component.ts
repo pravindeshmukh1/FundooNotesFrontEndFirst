@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router, ActivatedRoute, ParamMap, Params } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-pwd-reset',
   templateUrl: './pwd-reset.component.html',
-  styleUrls: ['./pwd-reset.component.css'],
+  styleUrls: ['./pwd-reset.component.scss'],
 })
 export class PwdResetComponent implements OnInit {
   hide = true;
@@ -29,17 +29,14 @@ export class PwdResetComponent implements OnInit {
       ? 'Password is Required '
       : 'Password should be minimum of 8 characters';
   }
-
   onSubmit() {
     let userData = {
       newPassword: this.Password.value,
     };
     var tokenObject;
     this.router.params.subscribe((params: Params) => {
-       tokenObject = params['token'];
+      tokenObject = params['token'];
     });
-
-    console.log('Token', tokenObject);
 
     this.userService.resetPassword(userData, tokenObject).subscribe(
       (res) => {
@@ -49,7 +46,6 @@ export class PwdResetComponent implements OnInit {
         this.route.navigate(['/login']);
       },
       (err) => {
-        console.log(err)
         this.snackBar.open('something went wrong', '', {
           duration: 4000,
         });

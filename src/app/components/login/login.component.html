@@ -1,9 +1,9 @@
 <div fxLayoutAlign="center center" fxFlexFill>
-  <mat-card fxFlex="500px" fxFlex.xs="100%">
-    <mat-card-header fxLayoutAlign="center">
-      <mat-card-title>Login Form</mat-card-title>
+  <mat-card fxLayout="column" fxFlex="500px" fxFlex.xs="100%">
+    <mat-card-header fxFlex="50px" fxLayoutAlign="center">
+      <mat-card-title>Login</mat-card-title>
     </mat-card-header>
-    <div>
+    <div fxLayout="column">
       <mat-form-field appearance="outline">
         <mat-label>Email Id</mat-label>
         <input
@@ -33,19 +33,24 @@
           {{ hide ? "visibility" : "visibility_off" }}
         </mat-icon>
       </mat-form-field>
-      <button
-        mat-button
-        type="submit"
-        mat-raised-button
-        color="primary"
-        class="divider"
-        (click)="onLogin()"
-      >
-        Login
-      </button>
-      <a routerLink="/forgotpassword">
-        Forgot Password ?
-      </a>
+
+      <div fxFlex="50px" fxLayoutAlign="space-between end">
+        <a routerLink="/forgotpassword">
+          Forgot Password ?
+        </a>
+        <a routerLink="/register">
+          Create Account
+        </a>
+        <button
+          mat-button
+          type="submit"
+          mat-raised-button
+          color="primary"
+          (click)="onLogin()"
+        >
+          Login
+        </button>
+      </div>
     </div>
   </mat-card>
 </div>

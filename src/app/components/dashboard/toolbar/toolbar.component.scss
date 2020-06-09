@@ -1,0 +1,52 @@
+$bgcolor: transparent;
+$textcolor: grayscale(
+  $color: #010000a1,
+);
+
+.mat-toolbar {
+  background-color: $bgcolor;
+  position: fixed;
+}
+
+.mat-icon {
+  margin-left: 4%;
+  margin-right: 10%;
+  background-color: $bgcolor;
+}
+
+.mat-sidenav {
+  width: 15%;
+  border: $bgcolor;
+}
+.mat-sidenav-container {
+  margin-top: 3.5%;
+  position: fixed;
+  background-color: $bgcolor;
+}
+
+.menu {
+  margin-left: 0.2%;
+}
+.fundooTitle {
+  font-size: 20px;
+  margin-right: 83%;
+}
+.mat-form-field {
+  width: 30%;
+  margin-top: 4%;
+}
+
+.titleImage {
+  height: 30px;
+  margin-right: 5px;
+}
+
+.titleImage :hover {
+  color: gray;
+  opacity: 5px;
+}
+
+.fundooTitle {
+  color: $textcolor;
+  opacity: 10px;
+}

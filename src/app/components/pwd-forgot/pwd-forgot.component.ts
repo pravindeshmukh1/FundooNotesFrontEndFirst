@@ -6,7 +6,7 @@ import { Router, ActivatedRoute, ParamMap, Params } from '@angular/router';
 @Component({
   selector: 'app-pwd-forgot',
   templateUrl: './pwd-forgot.component.html',
-  styleUrls: ['./pwd-forgot.component.css'],
+  styleUrls: ['./pwd-forgot.component.scss'],
 })
 export class PwdForgotComponent implements OnInit {
   hide = true;
@@ -24,12 +24,10 @@ export class PwdForgotComponent implements OnInit {
   }
   ngOnInit(): void {}
 
-  onNext() { 
+  onNext() {
     let userData = {
       email: this.Email.value,
     };
-    // this.router.queryParams.subscribe((params) => {
-    // });
     this.userService.requestForgot(userData).subscribe(
       (res) => {
         this.snackBar.open('Send Rest Password Link Sucessfully', '', {
@@ -37,7 +35,7 @@ export class PwdForgotComponent implements OnInit {
         });
       },
       (err) => {
-        this.snackBar.open('something went wrong', '', {
+        this.snackBar.open('Please Enter Email', '', {
           duration: 2000,
         });
       }
