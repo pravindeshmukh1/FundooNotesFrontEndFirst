@@ -1,6 +1,6 @@
 <div fxLayoutAlign="center center" fxFlexFill>
-  <mat-card fxFlex="500px" fxFlex.xs="100%">
-    <mat-card-header fxLayoutAlign="center">
+  <mat-card fxLayout="column" fxFlex="500px" fxFlex.xs="100%">
+    <mat-card-header fxFlex="50px" fxLayoutAlign="center">
       <mat-card-title>Reset Password</mat-card-title>
     </mat-card-header>
     <div>
@@ -20,9 +20,25 @@
           {{ hide ? "visibility" : "visibility_off" }}
         </mat-icon>
       </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Confirm Password</mat-label>
+        <input
+          matInput
+          [formControl]="ConfirmPassword"
+          placeholder="Re-Enter your password"
+          autocomplete="off"
+          [type]="hide ? 'password' : 'text'"
+        />
+        <mat-error *ngIf="ConfirmPassword.invalid">{{
+          getConfirmPasswordErrorMessage()
+        }}</mat-error>
+        <mat-icon matSuffix (click)="hide = !hide">
+          {{ hide ? "visibility" : "visibility_off" }}
+        </mat-icon>
+      </mat-form-field>
     </div>
 
-    <div fxLayout="column" fxLayoutAlign="space-between stretch">
+    <div  fxFlex="50px" fxLayout="column" fxLayoutAlign="space-between stretch">
       <button
         mat-button
         type="submit"

@@ -8,7 +8,7 @@ export class UserService {
   constructor(private httpService: HttpService) {}
 
   register(registerData) {
-    return this.httpService.post('register/userSignUp', registerData);
+    return this.httpService.post('user/userSignUp', registerData);
   }
 
   login(loginData) {

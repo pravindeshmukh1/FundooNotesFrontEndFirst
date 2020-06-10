@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
+import {
+  FormGroup,
+  Validators,
+  FormControl,
+  FormBuilder,
+} from '@angular/forms';
 import { UserService } from 'src/app/services/user.service/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { RxwebValidators } from '@rxweb/reactive-form-validators';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +15,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  formData: FormGroup;
   hide = true;
 
   constructor(
@@ -34,13 +39,17 @@ export class RegisterComponent implements OnInit {
     Validators.required,
   ]);
 
+  ConfirmPassword = new FormControl('', [
+    RxwebValidators.compare({ fieldName: 'Password' }),
+  ]);
+
   getFirstNameErrorMessage() {
     return this.FirstName.hasError('required')
       ? 'First Name is Required'
       : 'First Name should be minimum of 3 characters without leading/following spaces ';
   }
   getLastNameErrorMessage() {
-    return this.FirstName.hasError('required')
+    return this.LastName.hasError('required')
       ? 'Last Name is Required'
       : 'Last Name should be minimum of 3 characters without leading/following spaces ';
   }
@@ -54,27 +63,34 @@ export class RegisterComponent implements OnInit {
       ? 'Password is Required '
       : 'Password should be minimum of 8 characters';
   }
+  getConfirmPasswordErrorMessage() {
+    return this.ConfirmPassword.hasError('required')
+      ? 'Password is Required.'
+      : 'Input does not match.';
+  }
 
   onSubmit() {
-    let userData = {
-      firstName: this.FirstName.value,
-      lastName: this.LastName.value,
-      email: this.Email.value,
-      password: this.Password.value,
-      service: 'Basic',
-    };
-    this.userService.register(userData).subscribe(
-      (resp) => {
-        this.snackBar.open('User Register Sucessfully', '', {
-          duration: 2000,
-        });
-      },
-      (err) => {
-        this.snackBar.open('something went wrong', '', {
-          duration: 4000,
-        });
-      }
-    );
+    if (this.Password.value === this.ConfirmPassword.value) {
+      let userData = {
+        firstName: this.FirstName.value,
+        lastName: this.LastName.value,
+        email: this.Email.value,
+        password: this.Password.value,
+        service: 'Basic',
+      };
+      this.userService.register(userData).subscribe(
+        (resp) => {
+          this.snackBar.open('User Register Sucessfully', '', {
+            duration: 2000,
+          });
+        },
+        (err) => {
+          this.snackBar.open('something went wrong', '', {
+            duration: 4000,
+          });
+        }
+      );
+    }
   }
   ngOnInit(): void {}
 }

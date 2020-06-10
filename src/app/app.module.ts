@@ -22,6 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { CreatenoteComponent } from './components/dashboard/createnote/createnote.component';
 import { SearchboxComponent } from './components/dashboard/searchbox/searchbox.component';
+import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { SearchboxComponent } from './components/dashboard/searchbox/searchbox.c
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    RxReactiveFormsModule,
   ],
   providers: [UserService],
   bootstrap: [AppComponent],
