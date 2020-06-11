@@ -9,18 +9,19 @@
   </mat-expansion-panel-header>
 
   <textarea
-    autocomplete="off"
     matInput
     fxLayout="column"
-    fxLayoutAlign="end end"
+    fxLayoutGap="gappx"
     placeholder="Take a note..."
+    autocomplete="off"
+    formControlName="description"
     matTextareaAutosize
     matAutosizeMinRows="1"
     matAutosizeMaxRows="25"
-    formControlName="description"
   ></textarea>
 
-  <button mat-button (click)="onClose()">
+  <button fxLayoutAlign="end end" mat-button (click)="onClose()">
     Close
   </button>
+  <app-icons> </app-icons>
 </mat-expansion-panel>

@@ -23,6 +23,7 @@ import { MatListModule } from '@angular/material/list';
 import { CreatenoteComponent } from './components/dashboard/createnote/createnote.component';
 import { SearchboxComponent } from './components/dashboard/searchbox/searchbox.component';
 import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
+import { IconsComponent } from './components/dashboard/icons/icons.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
     ToolbarComponent,
     CreatenoteComponent,
     SearchboxComponent,
+    IconsComponent,
   ],
   imports: [
     BrowserModule,
