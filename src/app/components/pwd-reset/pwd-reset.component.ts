@@ -17,7 +17,7 @@ export class PwdResetComponent implements OnInit {
     private userService: UserService,
     private snackBar: MatSnackBar,
     private route: Router,
-    private router: ActivatedRoute,
+    private router: ActivatedRoute
   ) {}
 
   Password = new FormControl('', [
@@ -46,7 +46,7 @@ export class PwdResetComponent implements OnInit {
       let userData = {
         newPassword: this.Password.value,
       };
-      var tokenObject;
+      let tokenObject;
       this.router.params.subscribe((params: Params) => {
         tokenObject = params['token'];
       });

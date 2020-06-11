@@ -7,10 +7,12 @@ import { environment } from 'src/environments/environment';
 })
 export class HttpService {
   constructor(private http: HttpClient) {}
+
   id = localStorage.getItem('id');
   header = {
     id: this.id,
   };
+
   httpOption = new HttpHeaders(this.header);
 
   post(url, user) {
@@ -26,5 +28,16 @@ export class HttpService {
     return this.http.get(environment.baseUrl + url, {
       headers: this.httpOption,
     });
+  }
+
+  postNote(url: string, note: Object) {
+    let httpOption = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: sessionStorage.getItem('token'),
+      }),
+    };
+    console.log('note_service', note);
+    return this.http.post(environment.baseUrl + url, note, httpOption);
   }
 }
