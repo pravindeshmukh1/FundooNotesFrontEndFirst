@@ -24,6 +24,7 @@ import { CreatenoteComponent } from './components/dashboard/createnote/createnot
 import { SearchboxComponent } from './components/dashboard/searchbox/searchbox.component';
 import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
 import { IconsComponent } from './components/dashboard/icons/icons.component';
+import { DisplaynotesComponent } from './components/dashboard/displaynotes/displaynotes.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { IconsComponent } from './components/dashboard/icons/icons.component';
     CreatenoteComponent,
     SearchboxComponent,
     IconsComponent,
+    DisplaynotesComponent,
   ],
   imports: [
     BrowserModule,
