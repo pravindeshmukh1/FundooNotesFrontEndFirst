@@ -15,7 +15,6 @@ export class ToolbarComponent implements OnInit {
   ngOnInit(): void {}
 
   signOut() {
-    sessionStorage.clear();
-    this.route.navigate(['login']);
+    this.route.navigate(['/login']);
   }
 }

@@ -34,10 +34,9 @@ export class HttpService {
     let httpOption = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        Authorization: sessionStorage.getItem('token'),
+        Authorization: localStorage.getItem('token'),
       }),
     };
-    console.log('note_service', note);
     return this.http.post(environment.baseUrl + url, note, httpOption);
   }
 }

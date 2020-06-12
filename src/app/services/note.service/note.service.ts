@@ -8,8 +8,6 @@ export class NoteService {
   constructor(private httpService: HttpService) {}
 
   addNote(note: Object) {
-    console.log('note', note);
-
     return this.httpService.postNote('notes/addNotes', note);
   }
 }
