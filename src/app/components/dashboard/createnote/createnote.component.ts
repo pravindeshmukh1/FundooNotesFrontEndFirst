@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { window } from 'rxjs/operators';
+
 import {
   FormGroup,
   FormControl,
@@ -15,8 +15,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./createnote.component.scss'],
 })
 export class CreatenoteComponent implements OnInit {
-  panelOpenState: boolean = false;
-
   constructor(
     private noteService: NoteService,
     private formBuilder: FormBuilder,
@@ -24,12 +22,6 @@ export class CreatenoteComponent implements OnInit {
   ) {}
 
   noteData: FormGroup;
-
-  togglePanel() {
-    this.panelOpenState = !this.panelOpenState;
-    window.apply;
-  }
-
   noteValidator() {
     this.noteData = this.formBuilder.group({
       title: new FormControl('', [Validators.required]),
@@ -45,7 +37,6 @@ export class CreatenoteComponent implements OnInit {
       title: this.noteData.value.title,
       description: this.noteData.value.description,
     };
-
     this.noteService.addNote(note).subscribe(
       (res: any) => {
         this.snackBar.open('Note Added', '', {

@@ -24,7 +24,6 @@ export class IconsComponent implements OnInit {
     { code: '##D3D3D3', name: 'Gray' },
     { code: '#FFCC99', name: 'Brown' },
     { code: '#FFB6C1', name: 'Pink' },
-  ];
-
+  ]
   setColor(color: any) {}
 }

@@ -1,4 +1,4 @@
-.mat-expansion-panel {
+mat-expansion-panel {
   width: 30%;
   margin-top: 2%;
   margin-left: 25%;
@@ -9,10 +9,6 @@
   box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.46);
 }
 
-button {
-  margin-left: 90%;
-  margin-top: 30px;
-}
-textarea {
-  overflow: auto;
+mat-action-row {
+  border: hidden;
 }

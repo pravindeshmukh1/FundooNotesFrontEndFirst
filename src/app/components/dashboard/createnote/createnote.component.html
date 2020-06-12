@@ -1,16 +1,16 @@
 <mat-expansion-panel hideToggle [formGroup]="noteData">
-  <mat-expansion-panel-header (click)="togglePanel()">
+  <mat-expansion-panel-header>
     <input
       autocomplete="off"
       matInput
       placeholder="Title"
       formControlName="title"
+      autofocus
     />
   </mat-expansion-panel-header>
 
   <textarea
     matInput
-    fxLayout="column"
     fxLayoutGap="gappx"
     placeholder="Take a note..."
     autocomplete="off"
@@ -20,8 +20,11 @@
     matAutosizeMaxRows="25"
   ></textarea>
 
-  <button fxLayoutAlign="end end" mat-button (click)="onClose()">
-    Close
-  </button>
-  <app-icons> </app-icons>
+  <mat-action-row>
+    <app-icons class="icon"> </app-icons>
+    <button fxLayoutAlign="end" mat-button (click)="onClose()">
+      Close
+    </button>
+  </mat-action-row>
 </mat-expansion-panel>
+<app-displaynotes></app-displaynotes>
