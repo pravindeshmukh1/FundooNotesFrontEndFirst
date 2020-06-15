@@ -1,3 +1,16 @@
+@import "../createnote/createnote.component.scss";
+mat-card {
+  margin-left: 5%;
+  width: 630px;
+  height: 45px;
+  margin-right: 950px;
+}
+
 mat-form-field {
-  margin-left: 13%;
+  width: 600px;
+  position: relative;
+  font-size: 18px;
+  height: 70px;
+  font-display: inherit;
+  position: fixed;
 }

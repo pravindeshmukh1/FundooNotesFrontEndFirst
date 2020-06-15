@@ -1,16 +1,13 @@
-<mat-form-field
-  fxLayout="column"
-  fxFlex="38%"
-  appearance="outline"
-  autocomplete="off"
->
-  <input matInput placeholder="Search" />
-  <button
-    matPrefix
-    mat-icon-button
-    matTooltip="refresh"
-    matTooltipPosition="below"
-  >
-    <mat-icon>search</mat-icon>
-  </button>
-</mat-form-field>
+<mat-card fxLayoutAlign="start center ">
+  <mat-form-field floatLabel="never">
+    <input matInput placeholder="Search" />
+    <button
+      matPrefix
+      mat-icon-button
+      matTooltip="search"
+      matTooltipPosition="below"
+    >
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+</mat-card>
