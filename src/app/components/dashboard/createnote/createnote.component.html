@@ -7,6 +7,26 @@
       formControlName="title"
       autofocus
     />
+    <button
+      matSuffix
+      mat-icon-button
+      matTooltip="Pin note"
+      matTooltipPosition="below"
+      (click)="pinNote()"
+      *ngIf="!pinned"
+    >
+      <img src="../../../../assets/imeges/pin-outline.svg" />
+    </button>
+    <button
+      matSuffix
+      mat-icon-button
+      matTooltip="Unpin note"
+      matTooltipPosition="below"
+      (click)="pinNote()"
+      *ngIf="pinned"
+    >
+      <img src="../../../../assets/imeges/pin.svg" />
+    </button>
   </mat-expansion-panel-header>
 
   <textarea
@@ -21,8 +41,8 @@
   ></textarea>
 
   <mat-action-row>
-    <app-icons class="icon"> </app-icons>
-    <button fxLayoutAlign="end" mat-button (click)="onClose()">
+    <app-icons></app-icons>
+    <button class="close" fxLayoutAlign="end" mat-button (click)="onClose()">
       Close
     </button>
   </mat-action-row>

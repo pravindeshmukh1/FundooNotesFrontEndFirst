@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import {
   FormGroup,
@@ -15,6 +15,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./createnote.component.scss'],
 })
 export class CreatenoteComponent implements OnInit {
+  pinned: boolean = false;
+
+  @Output() getNotes: EventEmitter<any> = new EventEmitter();
   constructor(
     private noteService: NoteService,
     private formBuilder: FormBuilder,
@@ -31,6 +34,10 @@ export class CreatenoteComponent implements OnInit {
   resetValue() {
     this.noteData = null;
   }
+  
+  pinNote() {
+    this.pinned = !this.pinned;
+  }
 
   onClose() {
     let note = {
@@ -39,6 +46,7 @@ export class CreatenoteComponent implements OnInit {
     };
     this.noteService.addNote(note).subscribe(
       (res: any) => {
+        this.getNotes.emit;
         this.snackBar.open('Note Added', '', {
           duration: 4000,
         });
