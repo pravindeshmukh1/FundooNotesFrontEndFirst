@@ -25,6 +25,8 @@ import { SearchboxComponent } from './components/dashboard/searchbox/searchbox.c
 import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
 import { IconsComponent } from './components/dashboard/icons/icons.component';
 import { DisplaynotesComponent } from './components/dashboard/displaynotes/displaynotes.component';
+import { NotesComponent } from './components/dashboard/notes/notes.component';
+import { NoteService } from './services/note.service/note.service';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { DisplaynotesComponent } from './components/dashboard/displaynotes/displ
     SearchboxComponent,
     IconsComponent,
     DisplaynotesComponent,
+    NotesComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,7 @@ import { DisplaynotesComponent } from './components/dashboard/displaynotes/displ
     MatListModule,
     RxReactiveFormsModule,
   ],
-  providers: [UserService],
+  providers: [UserService, NoteService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

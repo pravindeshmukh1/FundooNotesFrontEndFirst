@@ -1,16 +1,17 @@
-<mat-card fxLayout="column" fxLayoutAlign="space-around end">
-  <textarea matInput matTextareaAutosize placeholder="title"></textarea>
-  <textarea
-    class="description"
-    matInput
-    matTextareaAutosize
-    placeholder="description"
-  ></textarea>
-
-  <mat-action-row fxLayoutAlign="end">
-    <app-icons class="icon"></app-icons>
-    <button mat-button>
-      Close
-    </button>
-  </mat-action-row>
-</mat-card>
+<div>
+  <mat-card fxLayout="row wrap">
+    <div>
+      <mat-card-header>
+        <mat-card-title>{{ note.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content> {{ note.description }}</mat-card-content>
+      <mat-card-actions> </mat-card-actions>
+      <mat-action-row fxLayoutAlign="start end">
+        <app-icons></app-icons>
+        <button mat-button>
+          Close
+        </button>
+      </mat-action-row>
+    </div>
+  </mat-card>
+</div>

@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  Validators,
-  FormControl,
-  FormBuilder,
-} from '@angular/forms';
+import { Validators, FormControl } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { RxwebValidators } from '@rxweb/reactive-form-validators';

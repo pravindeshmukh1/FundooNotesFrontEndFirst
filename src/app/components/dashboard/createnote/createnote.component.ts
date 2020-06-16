@@ -16,6 +16,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class CreatenoteComponent implements OnInit {
   pinned: boolean = false;
+  isPopUp: boolean = false;
 
   @Output() getNotes: EventEmitter<any> = new EventEmitter();
   constructor(
@@ -31,12 +32,13 @@ export class CreatenoteComponent implements OnInit {
       description: new FormControl('', [Validators.required]),
     });
   }
-  resetValue() {
-    this.noteData = null;
-  }
-  
+
   pinNote() {
     this.pinned = !this.pinned;
+  }
+
+  openCard() {
+    this.isPopUp = !this.isPopUp;
   }
 
   onClose() {
@@ -46,7 +48,8 @@ export class CreatenoteComponent implements OnInit {
     };
     this.noteService.addNote(note).subscribe(
       (res: any) => {
-        this.getNotes.emit;
+        this.getNotes.emit();
+        this.noteData = null;
         this.snackBar.open('Note Added', '', {
           duration: 4000,
         });

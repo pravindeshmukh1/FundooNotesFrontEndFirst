@@ -16,6 +16,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { TextFieldModule } from '@angular/cdk/text-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   imports: [],
@@ -37,6 +39,8 @@ import { TextFieldModule } from '@angular/cdk/text-field';
     MatListModule,
     MatExpansionModule,
     TextFieldModule,
+    MatSelectModule,
+    MatGridListModule,
   ],
 })
 export class MaterialModule {}

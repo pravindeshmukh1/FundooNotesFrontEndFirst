@@ -39,4 +39,14 @@ export class HttpService {
     };
     return this.http.post(environment.baseUrl + url, note, httpOption);
   }
+
+  getNotes(url) {
+    let httpOption = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: localStorage.getItem('token'),
+      }),
+    };
+    return this.http.get(environment.baseUrl + url, httpOption);
+  }
 }

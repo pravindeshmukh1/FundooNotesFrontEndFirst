@@ -1,4 +1,4 @@
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { LoginComponent } from './components/login/login.component';
@@ -9,10 +9,11 @@ import { PwdResetComponent } from './components/pwd-reset/pwd-reset.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NotesComponent } from './components/dashboard/notes/notes.component';
 import { AuthGuard } from './guard/auth.guard';
+import { DisplaynotesComponent } from './components/dashboard/displaynotes/displaynotes.component';
 const routes: Routes = [
   {
     path: '',
-    component: RegisterComponent,
+    component: LoginComponent,
   },
   {
     path: 'login',
@@ -35,18 +36,9 @@ const routes: Routes = [
     component: DashboardComponent,
     canActivate: [AuthGuard],
     children: [
-      {
-        path: '',
-        component: NotesComponent,
-      },
-      {
-        path: 'notes',
-        component: NotesComponent,
-      },
-      {
-        path: 'getAllNotes',
-        component: DashboardComponent,
-      },
+      { path: '', component: NotesComponent },
+      { path: 'notes', component: NotesComponent },
+      { path: 'getAllNotes', component: DisplaynotesComponent },
     ],
   },
 ];
