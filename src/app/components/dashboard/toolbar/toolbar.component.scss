@@ -9,7 +9,7 @@ $textcolor: grayscale(
 
 .mat-icon {
   margin-left: 4%;
-  margin-right: 10%;
+  margin-right: 15%;
   background-color: $bgcolor;
 }
 
@@ -20,7 +20,6 @@ $textcolor: grayscale(
 }
 .mat-sidenav-container {
   margin-top: 3.5%;
-  position: fixed;
   background-color: $bgcolor;
 }
 
@@ -36,8 +35,9 @@ $textcolor: grayscale(
 }
 
 .titleImage {
-  height: 30px;
+  height: 32px;
   margin-right: 5px;
+  margin-left: 5px;
 }
 
 .titleImage :hover {
@@ -48,4 +48,12 @@ $textcolor: grayscale(
 .fundooTitle {
   color: $textcolor;
   opacity: 10px;
+}
+.profile {
+  margin-left: 2em;
+}
+
+.profile ::ng-deep .mat-select-arrow {
+  border-left: 0px solid transparent;
+  border-right: 0px solid transparent;
 }
