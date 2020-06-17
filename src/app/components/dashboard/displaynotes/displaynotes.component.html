@@ -1,17 +1,7 @@
-<div>
-  <mat-card fxLayout="row wrap">
-    <div>
-      <mat-card-header>
-        <mat-card-title>{{ note.title }}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content> {{ note.description }}</mat-card-content>
-      <mat-card-actions> </mat-card-actions>
-      <mat-action-row fxLayoutAlign="start end">
-        <app-icons></app-icons>
-        <button mat-button>
-          Close
-        </button>
-      </mat-action-row>
-    </div>
+<div  class="display" fxLayout="row wrap" fxLayoutGap="5px">
+  <mat-card>
+    <div>{{ note.title }}</div>
+    <div>{{ note.description }}</div>
+    <div class="icons"><app-icons (color)="setColor($event)"></app-icons></div>
   </mat-card>
 </div>

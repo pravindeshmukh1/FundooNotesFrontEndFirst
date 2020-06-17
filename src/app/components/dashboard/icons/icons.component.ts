@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-icons',
@@ -6,11 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./icons.component.scss'],
 })
 export class IconsComponent implements OnInit {
+  @Output() color: EventEmitter<any> = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {}
 
-  colorCode: Array<any> = [
+  colors: Array<any> = [
     { code: '#FFFFFF', name: 'White' },
     { code: '#F28B82', name: 'Red' },
     { code: '#F7BC04', name: 'Orange' },
@@ -18,12 +19,14 @@ export class IconsComponent implements OnInit {
     { code: '#b7f8dd', name: 'Green' },
     { code: '#A7FFEB', name: 'Teal' },
     { code: '#CBF0F8', name: 'Blue' },
-    { code: '#AECBFA', name: 'Dark Blue' },
     { code: '#800080', name: 'Lime' },
     { code: '#FF99FF', name: 'Purple' },
-    { code: '##D3D3D3', name: 'Gray' },
+    { code: '#D3D3D3', name: 'Gray' },
     { code: '#FFCC99', name: 'Brown' },
     { code: '#FFB6C1', name: 'Pink' },
-  ]
-  setColor(color: any) {}
+  ];
+
+  setColor(color: any) {
+    this.color.emit(color);
+  }
 }

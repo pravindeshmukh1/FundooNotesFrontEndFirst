@@ -12,10 +12,26 @@
       </mat-icon>
     </button>
 
-    <button mat-icon-button matTooltip="Change color">
+    <button
+      mat-icon-button
+      matTooltip="Change color"
+      [matMenuTriggerFor]="colorMenu"
+    >
       <mat-icon class="icons">
         palette_outline
       </mat-icon>
+      <mat-menu #colorMenu="matMenu">
+        <div class="pop">
+          <div *ngFor="let color of colors" class="colorButton">
+            <button
+              mat-mini-fab
+              [style.background]="color.code"
+              [matTooltip]="color?.name"
+              (click)="setColor(color.code)"
+            ></button>
+          </div>
+        </div>
+      </mat-menu>
     </button>
 
     <button mat-icon-button matTooltip="Add image">

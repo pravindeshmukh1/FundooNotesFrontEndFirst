@@ -12,4 +12,7 @@ export class NoteService {
   getNote() {
     return this.httpService.getNotes(`notes/getNotesList`);
   }
+  changeColor(note: Object) {
+    return this.httpService.postNote(`notes/changesColorNotes`, note);
+  }
 }
